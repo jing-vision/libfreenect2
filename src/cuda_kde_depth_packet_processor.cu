@@ -36,8 +36,9 @@
 #include <libfreenect2/protocol/response.h>
 #include "libfreenect2/logging.h"
 
-#include <helper_math.h>
+#include "helper_math.h"
 #include <math_constants.h>
+#include <device_launch_parameters.h>
 
 __constant__ static unsigned int BFI_BITMASK;
 __constant__ static float AB_MULTIPLIER;
@@ -695,7 +696,7 @@ void phaseUnWrapper3(float t0, float t1,float t2, float* phase_first, float* pha
 }
 
 static __global__
-void processPixelStage2_phase3(const float4 __restrict__ *a_in, const float4 __restrict__ *b_in, float *phase_1, float *phase_2, float *phase_3, float *conf1, float *conf2, float *conf3)
+void processPixelStage2_phase3(const float4 /*__restrict__*/ *a_in, const float4 /*__restrict__*/ *b_in, float *phase_1, float *phase_2, float *phase_3, float *conf1, float *conf2, float *conf3)
 {
   const uint i = get_global_id(0);
 

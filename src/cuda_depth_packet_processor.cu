@@ -28,8 +28,9 @@
 #include <libfreenect2/protocol/response.h>
 #include "libfreenect2/logging.h"
 
-#include <helper_math.h>
+#include "helper_math.h"
 #include <math_constants.h>
+#include <device_launch_parameters.h>
 
 __constant__ static unsigned int BFI_BITMASK;
 __constant__ static float AB_MULTIPLIER;
