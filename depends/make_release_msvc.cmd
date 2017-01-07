@@ -1,13 +1,12 @@
 @echo off
-set ver=%1
-set vs_year=%2
+set vs_year=%1
 if "%vs_year%"=="2015" (
   set vs_ver=14
 ) else (
   if "%vs_year%"=="2013" (
     set vs_ver=12
   ) else (
-    echo Unsupported MSVC version. Usage: %~nx0 version vs_year >&2
+    echo Unsupported MSVC version. Usage: %~nx0 vs_year >&2
     exit /b
   )
 )
@@ -29,6 +28,6 @@ copy ..\LICENSES.txt install
 copy ..\INSTALL-windows.txt install
 copy ..\..\CONTRIB install
 cd ..
-rmdir /s /q libfreenect2-%ver%-vs%vs_year%-x64
-move build\install libfreenect2-%ver%-vs%vs_year%-x64
+rmdir /s /q libfreenect2-vs%vs_year%-x64
+move build\install libfreenect2-vs%vs_year%-x64
 rmdir /s /q build

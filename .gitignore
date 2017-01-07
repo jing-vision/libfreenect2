@@ -1,7 +1,6 @@
 build
 
 # Dependency folders
-depends/*/
 depends/*.deb
 
 ## Ignore Visual Studio temporary files, build results, and
